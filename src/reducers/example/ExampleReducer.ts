@@ -1,5 +1,5 @@
 import ReducerErrors from '../../errors/ReducerErrors'
-import ActionModel from '../../models/ActionModel'
+import GenericReducerActionModel from '../../models/GenericReducerActionModel'
 import ExampleReducerActions from './ExampleReducerActions'
 
 /**
@@ -7,7 +7,7 @@ import ExampleReducerActions from './ExampleReducerActions'
  * @param state
  * @param action
  */
-function appReducer(state: object, action: ActionModel) {
+function appReducer(state: object, action: GenericReducerActionModel) {
     switch (action.type) {
         case ExampleReducerActions.SOMETHING:
             return state
