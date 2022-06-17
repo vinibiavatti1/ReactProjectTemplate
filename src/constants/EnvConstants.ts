@@ -4,10 +4,10 @@ import EnvService from '../services/EnvService'
 const env = EnvService.getEnv()
 let constants: { [key: string]: any } = {} // eslint-disable-line
 if (env == EnvEnum.PRODUCTION) {
-    constants = import('../envs/production.json')
+    constants = require('../envs/production.json')
 } else if (env == EnvEnum.TEST) {
-    constants = import('../envs/test.json')
+    constants = require('../envs/test.json')
 } else {
-    constants = import('../envs/development.json')
+    constants = require('../envs/development.json')
 }
 export default constants

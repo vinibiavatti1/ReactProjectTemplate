@@ -1,5 +1,6 @@
 import React from 'react'
 import EnvConstants from '../../../constants/EnvConstants'
+import { getCurrentLocale } from '../../../services/I18nService'
 import HomeProps from './HomeProps'
 import './Home.css'
 
@@ -11,8 +12,11 @@ import './Home.css'
 export default function Home(props: HomeProps) {
     return (
         <>
-            <h1 className="text-center">{props.title}</h1>
-            <h2>Env: {EnvConstants.environment}</h2>
+            <div className="text-center">
+                <h1>{props.title}</h1>
+                <div>Env: {EnvConstants.environment}</div>
+                <div>Locale: {getCurrentLocale()}</div>
+            </div>
         </>
     )
 }

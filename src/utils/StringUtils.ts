@@ -5,10 +5,11 @@
  * @returns A formatted string.
  */
 function format(message: string, ...args: string[]) {
+    let internalMessage = message
     args.forEach((arg, index) => {
-        message = message.replace(`{${index}}`, arg)
+        internalMessage = internalMessage.replace(`{${index}}`, arg)
     })
-    return message
+    return internalMessage
 }
 
 export default {
