@@ -19,6 +19,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended"
     ],
+    "ignorePatterns": ["build"],
     "rules": {
         "require-jsdoc": [
             "error",
