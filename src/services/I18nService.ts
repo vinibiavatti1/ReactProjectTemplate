@@ -1,5 +1,7 @@
 import StringUtils from '../utils/StringUtils'
 import LocaleEnum from '../enums/LocaleEnum'
+import EnvService from './EnvService'
+import EnvEnum from '../enums/EnvEnum'
 import { readFileSync } from 'fs'
 
 const DEFAULT_MESSAGE_BUNDLE_KEY = 'default'
@@ -28,6 +30,9 @@ export function loadI18nMessageBundle(): void {
         locale = DEFAULT_MESSAGE_BUNDLE_KEY
     }
     currentBundle = i18nMessageBundles[locale]()
+    if (EnvService.getEnv() != EnvEnum.PRODUCTION) {
+        console.log(`Message bundle loaded for locale: ${locale}`)
+    }
 }
 
 /**
