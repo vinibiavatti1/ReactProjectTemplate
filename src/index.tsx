@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import WebVitalsService from './services/WebVitalsService'
 import App from './components/main/app/App'
-import './index.css'
 import EnvService from './services/EnvService'
 import EnvEnum from './enums/EnvEnum'
 import setup from './setup'
+import './index.css'
 
 const ROOT_ELEMENT_ID = 'root'
 

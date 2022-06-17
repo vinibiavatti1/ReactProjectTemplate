@@ -5,7 +5,7 @@ import EnvEnum from '../enums/EnvEnum'
 import AppError from '../errors/AppError'
 import JsonUtils from '../utils/JSONUtils'
 
-const DEFAULT_MESSAGE_BUNDLE_KEY = 'en_us'
+const DEFAULT_MESSAGE_BUNDLE_KEY: string = 'en_us'
 
 /**
  * Internationalization message bundles.
@@ -25,7 +25,7 @@ let currentLocale: null | string = null
 /**
  * Initialize module by loading message bundle to memory.
  */
-export function init() {
+export function init(): void {
     loadI18nMessageBundle()
 }
 

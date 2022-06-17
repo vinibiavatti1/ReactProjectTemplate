@@ -8,7 +8,7 @@ import './Layout.css'
  * React layout component.
  * @returns
  */
-export default function Layout() {
+export default function Layout(): JSX.Element {
     return (
         <>
             <header></header>

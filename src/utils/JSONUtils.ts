@@ -3,7 +3,7 @@
  * @param path path as string like: node.subnode.value.
  * @param object object to search.
  */
-function queryByStringPath(path: string, object: object): any {
+function queryByStringPath(path: string, object: object): unknown {
     const keys = path.split('.')
     let node: any = object // eslint-disable-line
     keys.forEach((key) => {

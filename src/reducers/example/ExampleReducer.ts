@@ -4,10 +4,10 @@ import ExampleReducerActions from './ExampleReducerActions'
 
 /**
  * Reducer Impl. Example.
- * @param state
- * @param action
+ * @param state state object.
+ * @param action action object with payload.
  */
-function appReducer(state: object, action: GenericReducerActionModel) {
+function appReducer(state: object, action: GenericReducerActionModel): object {
     switch (action.type) {
         case ExampleReducerActions.SOMETHING:
             return state

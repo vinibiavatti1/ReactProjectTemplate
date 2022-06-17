@@ -9,7 +9,7 @@ import './Home.css'
  * @param props Component properties.
  * @returns React element.
  */
-export default function Home(props: HomeProps) {
+export default function Home(props: HomeProps): JSX.Element {
     return (
         <>
             <div className="text-center">

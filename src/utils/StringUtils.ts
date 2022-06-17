@@ -4,7 +4,7 @@
  * @param args Arguments to be replaced.
  * @returns A formatted string.
  */
-function format(message: string, ...args: string[]) {
+function format(message: string, ...args: string[]): string {
     let internalMessage = message
     args.forEach((arg, index) => {
         internalMessage = internalMessage.replace(`{${index}}`, arg)

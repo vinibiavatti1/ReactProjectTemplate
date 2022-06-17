@@ -31,6 +31,18 @@
                     "FunctionExpression": false
                 }
             }
-        ]
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+            2,
+            {
+                "allowExpressions": true,
+                "allowTypedFunctionExpressions": true,
+                "allowHigherOrderFunctions": false,
+                "allowDirectConstAssertionInArrowFunctions": true,
+                "allowConciseArrowFunctionExpressionsStartingWithVoid": false,
+                "allowedNames": []
+            }
+        ],
+        "@typescript-eslint/no-inferrable-types": [0]
     }
 }

@@ -3,7 +3,7 @@ import SessionContext from '../contexts/SessionContext'
 
 /**
  * Session context hook.
- * @returns
+ * @returns session object.
  */
 export default function useSession(): object {
     return useContext(SessionContext)

@@ -8,7 +8,7 @@ import './App.css'
  * @param props Component properties.
  * @returns React element.
  */
-export default function App() {
+export default function App(): JSX.Element {
     return (
         <>
             <BrowserRouter>

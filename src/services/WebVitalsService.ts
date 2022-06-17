@@ -4,7 +4,7 @@ import { ReportHandler } from 'web-vitals'
  * Report web vitals builtin function.
  * @param onPerfEntry
  */
-function reportWebVitals(onPerfEntry?: ReportHandler) {
+function reportWebVitals(onPerfEntry?: ReportHandler): void {
     if (onPerfEntry && onPerfEntry instanceof Function) {
         import('web-vitals').then(
             ({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
