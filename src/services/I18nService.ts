@@ -2,27 +2,58 @@ import StringUtils from '../utils/StringUtils'
 import LocaleEnum from '../enums/LocaleEnum'
 import { readFileSync } from 'fs'
 
+const DEFAULT_MESSAGE_BUNDLE_KEY = 'default'
+
 /**
- * Internationalization bundles.
+ * Internationalization message bundles.
  * Note that it uses arrow function to be lazy load for performance.
  */
-const i18nBundles: { [key: string]: () => object } = {
+const i18nMessageBundles: { [key: string]: () => object } = {
     default: () => readFileSync('../i18n/en_us.json').toJSON(),
     en_us: () => readFileSync('../i18n/en_us.json').toJSON(),
     pt_pt: () => readFileSync('../i18n/pt_pt.json').toJSON(),
 }
 
 /**
+ * Cached bundle.
+ */
+let currentBundle = {}
+
+/**
+ * Load the message bundle to memory by local storage locale.
+ */
+export function loadI18nMessageBundle(): void {
+    let locale = localStorage.getItem(LocaleEnum.LOCAL_STORAGE_LOCALE_KEY)
+    if (!locale || !(locale in i18nMessageBundles)) {
+        locale = DEFAULT_MESSAGE_BUNDLE_KEY
+    }
+    currentBundle = i18nMessageBundles[locale]()
+}
+
+/**
  * Get current i18n message file bundle checking local storage key.
  * @returns message bundle object.
  */
-function getI18nMessageBundle(): object {
-    const locale = localStorage.getItem(LocaleEnum.LOCAL_STORAGE_LOCALE_KEY)
-    if (locale && locale in i18nBundles) {
-        const bundle = i18nBundles[locale]
-        return bundle()
+export function getI18nMessageBundle(): object {
+    if (!currentBundle) {
+        loadI18nMessageBundle()
     }
-    return i18nBundles.default()
+    return currentBundle
+}
+
+/**
+ * Reset cached message bundle to force reload.
+ */
+export function resetI18nMessageBundle(): void {
+    currentBundle = {}
+}
+
+/**
+ * Reset cached message bundle to force reload.
+ * @returns object of message bundles
+ */
+export function getI18nMessageBundles(): { [key: string]: () => object } {
+    return i18nMessageBundles
 }
 
 /**
@@ -30,7 +61,7 @@ function getI18nMessageBundle(): object {
  * @param messagePath path to the message in the bundle like: node.subnode.message.
  * @returns string message in the bundle.
  */
-function i18n(messagePath: string, ...args: string[]): string {
+export default function i18n(messagePath: string, ...args: string[]): string {
     const i18nMessageBundle = getI18nMessageBundle()
     const keys = messagePath.split('.')
     let node: any = i18nMessageBundle // eslint-disable-line
@@ -48,5 +79,3 @@ function i18n(messagePath: string, ...args: string[]): string {
     }
     return StringUtils.format(message, ...args)
 }
-
-export default i18n
