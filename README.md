@@ -1,2 +1,1 @@
-# ReactProjectTemplate
-React Project Template
+# React Project Template

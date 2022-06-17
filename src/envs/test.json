@@ -1,0 +1,10 @@
+{
+    "environment": "Test",
+    "baseUrl": "http://backend-test.com/api",
+    "endpoints": {
+        "auth": {
+            "login": "/login",
+            "logout": "/logout"
+        }
+    }
+}

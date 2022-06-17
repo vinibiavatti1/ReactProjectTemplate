@@ -1,0 +1,10 @@
+{
+    "environment": "Production",
+    "baseUrl": "http://backend.com/api",
+    "endpoints": {
+        "auth": {
+            "login": "/login",
+            "logout": "/logout"
+        }
+    }
+}
