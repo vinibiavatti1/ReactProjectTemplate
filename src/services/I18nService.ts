@@ -1,9 +1,8 @@
 import StringUtils from '../utils/StringUtils'
 import LocaleEnum from '../enums/LocaleEnum'
-import EnvService from './EnvService'
 import EnvEnum from '../enums/EnvEnum'
-import AppError from '../errors/AppError'
 import JsonUtils from '../utils/JSONUtils'
+import Constants from '../constants/Constants'
 
 const DEFAULT_MESSAGE_BUNDLE_KEY: string = 'en_us'
 
@@ -46,7 +45,7 @@ export function loadI18nMessageBundle(): void {
     }
     currentBundle = i18nMessageBundles[locale]()
     currentLocale = locale
-    if (EnvService.getEnv() != EnvEnum.PRODUCTION) {
+    if (Constants.ENVIRONMENT != EnvEnum.PRODUCTION) {
         console.log(`Message bundle loaded for locale: ${locale}`)
     }
 }
@@ -83,9 +82,7 @@ export function getI18nMessageBundles(): { [key: string]: () => object } {
 export default function i18n(query: string, ...args: string[]): string {
     const i18nMessageBundle = getCurrentMessageBundle()
     if (i18nMessageBundle === null) {
-        throw new AppError(
-            'To use I18nService resources, please, initialize the module using init() first'
-        )
+        return query
     }
     const message = JsonUtils.findByQueryString(query, i18nMessageBundle)
     if (message && typeof message == 'string') {

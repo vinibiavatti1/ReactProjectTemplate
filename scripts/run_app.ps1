@@ -1,5 +1,4 @@
 Set-Location ".."
-$env:NODE_ENV="development"
 Invoke-Expression "npm start"
 Set-Location ".\scripts"
 Read-Host -Prompt "Press Enter to exit"

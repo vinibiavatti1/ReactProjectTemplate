@@ -1,5 +1,4 @@
 Set-Location ".."
-$env:NODE_ENV="test"
-Invoke-Expression "npm start"
+Invoke-Expression "npm run build:staging"
 Set-Location ".\scripts"
 Read-Host -Prompt "Press Enter to exit"
