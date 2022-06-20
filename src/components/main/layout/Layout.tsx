@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from '../../pages/home/Home'
-import i18n from '../../../services/I18nService'
+import { useTranslation } from 'react-i18next'
 import './Layout.css'
 
 /**
@@ -8,6 +8,7 @@ import './Layout.css'
  * @returns
  */
 export default function Layout(): JSX.Element {
+    const [t, i18n] = useTranslation()
     return (
         <>
             <header></header>
@@ -16,7 +17,10 @@ export default function Layout(): JSX.Element {
                     <Route
                         path="/"
                         element={
-                            <Home title={i18n('generalMessages.appMessage')} />
+                            <Home
+                                title={t('general.app.message')}
+                                language={i18n.language}
+                            />
                         }
                     />
                 </Routes>

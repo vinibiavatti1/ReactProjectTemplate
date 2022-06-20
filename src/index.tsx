@@ -5,6 +5,7 @@ import App from './components/main/app/App'
 import EnvEnum from './enums/EnvEnum'
 import setup from './setup'
 import Constants from './constants/Constants'
+import Suspense from './components/main/suspend/Suspense'
 import './index.css'
 
 const ROOT_ELEMENT_ID = 'root'
@@ -20,7 +21,9 @@ const root = ReactDOM.createRoot(
 // Render React element tree.
 root.render(
     <React.StrictMode>
-        <App />
+        <React.Suspense fallback={<Suspense />}>
+            <App />
+        </React.Suspense>
     </React.StrictMode>
 )
 

@@ -1,15 +1,10 @@
 /**
- * Format string replacing index mustaches by arguments.
- * @param message The message to process.
- * @param args Arguments to be replaced.
+ * Format string utility function example.
+ * @param text the text to format.
  * @returns A formatted string.
  */
-function format(message: string, ...args: string[]): string {
-    let internalMessage = message
-    args.forEach((arg, index) => {
-        internalMessage = internalMessage.replace(`{${index}}`, arg)
-    })
-    return internalMessage
+function format(text: string): string {
+    return text
 }
 
 export default {
