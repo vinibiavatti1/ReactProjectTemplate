@@ -1,6 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import Backend from "i18next-http-backend";
+import Constants from "./constants/Constants";
 
 /**
  * Setup application by initializing the required resources.
@@ -17,8 +18,8 @@ function setupI18next(): void {
         .use(Backend)
         .use(initReactI18next)
         .init({
-            lng: "en",
-            fallbackLng: "en",
+            lng: Constants.DEFAULT_LOCALE,
+            fallbackLng: Constants.DEFAULT_LOCALE,
             load: "languageOnly",
             interpolation: {
                 escapeValue: false
