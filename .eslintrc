@@ -2,7 +2,8 @@
     "root": true,
     "env": {
         "browser": true,
-        "es2020": true
+        "es2020": true,
+        "jest": true
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -12,15 +13,19 @@
         "ecmaVersion": 11,
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "react"],
+    "plugins": ["@typescript-eslint", "react", "react-hooks"],
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended"
+        "prettier"
     ],
     "ignorePatterns": ["build"],
     "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "require-jsdoc": [
             "error",
             {

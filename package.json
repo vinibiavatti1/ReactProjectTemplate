@@ -2,6 +2,26 @@
     "name": "react-project-template",
     "version": "1.0.0",
     "private": true,
+    "scripts": {
+        "start": "react-scripts start",
+        "build:staging": "env-cmd -f .env.staging react-scripts build",
+        "build:production": "env-cmd -f .env.production react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "serve": "serve -s build"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.3.0",
@@ -18,33 +38,8 @@
         "typescript": "^4.7.3",
         "web-vitals": "^2.1.4"
     },
-    "scripts": {
-        "start": "react-scripts start",
-        "build:staging": "env-cmd -f .env.staging react-scripts build",
-        "build:production": "env-cmd -f .env.production react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "serve": "serve -s build"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
     "devDependencies": {
+        "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-react-hooks": "^4.6.0"
     }
 }

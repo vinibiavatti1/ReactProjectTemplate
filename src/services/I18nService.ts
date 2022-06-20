@@ -32,7 +32,7 @@ export function init(): void {
  * Force reload module data.
  */
 export function reset(): void {
-    init()
+    loadI18nMessageBundle()
 }
 
 /**
@@ -82,6 +82,7 @@ export function getI18nMessageBundles(): { [key: string]: () => object } {
 export default function i18n(query: string, ...args: string[]): string {
     const i18nMessageBundle = getCurrentMessageBundle()
     if (i18nMessageBundle === null) {
+        console.error('To use I18nService, please, initialize it with init() method first.');
         return query
     }
     const message = JsonUtils.findByQueryString(query, i18nMessageBundle)

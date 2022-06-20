@@ -1,4 +1,3 @@
-import React from 'react'
 import Constants from '../../../constants/Constants'
 import HomeProps from './HomeProps'
 import { getCurrentLocale } from '../../../services/I18nService'
