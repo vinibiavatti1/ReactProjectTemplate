@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import WebVitalsService from './services/WebVitalsService'
-import App from './components/main/app/App'
+import App from './components/App'
 import EnvEnum from './enums/EnvEnum'
 import setup from './setup'
 import Constants from './constants/Constants'
-import Suspense from './components/main/suspend/Suspense'
+import Suspense from './components/shared/suspense/Suspense'
 import './index.css'
 
 const ROOT_ELEMENT_ID = 'root'
