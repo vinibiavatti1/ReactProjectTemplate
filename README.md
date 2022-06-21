@@ -143,7 +143,7 @@ To use specific variables depending the environment that app is running on, the 
 
 ## Build
 
-There are two commands for building the application: `build:staging` and `build:production`. The routine that will be executed for each build is the same, but the difference is the `.env` file that will be used. This responsible library for selecting the correct `.env` file is `env-cmd`.
+There are two commands for building the application: `build:staging` and `build:production`. The routine that will be executed for each build is the same, but the difference is the `.env` file that will be used. The `env-cmd` library will be used to select the correct `.env` file.
 
 ## Scripts
 
