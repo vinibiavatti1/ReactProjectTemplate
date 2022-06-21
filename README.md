@@ -92,9 +92,49 @@ Inside the `/components` folder, we can find some folders that represent a speci
 | `App.test.tsx` | App component test                                               |
 | `App.tsx`      | App component configuration                                      |
 
+## Internationalization
+
+The library [i18next](https://react.i18next.com/) is used set the project as multi-cultural. It uses JSON message files to render messages in the components by the locale of the user.
+
+The configuration of this lib can be found at `setup.ts` file.
+
+To start using the internationalization, you must define the message for each language that the app supports in the locale files. These files are located in `/public/locales` folder.
+
+```
+/public
+    /locales
+        /en
+            translation.json
+        /pt
+            translation.json
+    ...
+```
+
+To add a new translation, we just need to add this message to the `translation.json` file. After this, to use the translation we can use the `useTranslation` hook provided by the library.
+
+```typescript
+const [t, i18n] = useTranslation()
+const localeMessage = t('my.message')
+```
+
+| Variable | Description                                                                                      |
+| -------- | ------------------------------------------------------------------------------------------------ |
+| `t`      | Function that can be used to get the message in the `transaltion.json` file                      |
+| `i18n`   | Instance with the library properties, such as the current language, and other utility functions. |
+
+## Reducers
+
+The `/reducers` folder store the reducer functions that application uses. These function should be used by `useReducer()` React hook. Each reducer has three files:
+
+| File                     | Description                                            |
+| ------------------------ | ------------------------------------------------------ |
+| `reducer.ts`             | Reducer function that is used into `useReducer()` hook |
+| `reducerActions.ts`      | Reducer action type enumeration                        |
+| `reducerInitialState.ts` | Initial state that is passed to `useReducer()` hook    |
+
 ## Environment
 
-To use specific variables depending the environment that app is running on, the lib `Dotenv` was used. This lib provides the `.env` files to configure the variables for each environment. These variables can be accessed using `process.env.<variable_name>`
+To use specific variables depending the environment that app is running on, the lib `Dotenv` was used. This lib provides the `.env` files to configure the variables for each environment. These variables can be accessed using `process.env.<variable_name>`. Some environment variables are defined in `Constants.ts` file for usage.
 
 > Note: To ensure that React will load the environment variables, these variables must start with `REACT_APP` prefix.
 
