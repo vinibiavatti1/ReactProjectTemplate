@@ -1,38 +1,41 @@
 # React Project Template
 
-The purpose of this repository is to facilitate the React project creation, giving useful resources and a feature based organization. Different of `create-react-app`, the focus of this boilerplate is to give the opportunity to clone this repository and start coding without spending some time to configure linters and other libraries.
+The purpose of this repository is to facilitate the React project creation, giving useful resources and a feature based organization. Different of [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html), the focus of this boilerplate is to give the opportunity to clone this repository and start coding without spending some time to configure linters and other libraries.
+
+This project was made keeping in mind that the [VSCode](https://code.visualstudio.com/) IDE will be used for the development.
 
 ## Features
 
 This template offers built-in useful features that are used commonly in WEB projects. The features available for this projects are:
 
 -   Linting and Formatting
-    -   ESlint
-    -   Prettier
-    -   EditorConfig
-    -   React Hooks Linter
+    -   [ESlint](https://eslint.org/)
+    -   [Prettier](https://prettier.io/)
+    -   [EditorConfig](https://editorconfig.org/)
+    -   [React Hooks Linter](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+    -   [Typescript ESlint](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
 -   Environment
-    -   Dotenv
-    -   EnvCMD
+    -   [Dotenv](https://www.npmjs.com/package/dotenv)
+    -   [EnvCMD](https://www.npmjs.com/package/env-cmd)
 -   Testing
-    -   Jest
+    -   [Jest](https://jestjs.io/docs/tutorial-react)
 -   Typing
-    -   Typescript
+    -   [Typescript](https://www.typescriptlang.org/)
 -   Internationalization
-    -   I18next
+    -   [I18next](https://react.i18next.com/)
 -   Analytics
-    -   Web Vitals
+    -   [Web Vitals](https://create-react-app.dev/docs/measuring-performance/)
 -   Scripts
-    -   PowerShell Util Scripts
+    -   [PowerShell Util Scripts](https://docs.microsoft.com/pt-pt/powershell/)
 
 ## Recommended VSCode Extensions
 
 The list below set the recommended extensions to ensure all configurations of the project to work fine. Note that these extensions are configured inside `.vscode/extensions.json` for automatic recommendation after open the IDE.
 
--   Editor Config `editorconfig.editorconfig`
--   ESLint `dbaeumer.vscode-eslint`
--   Prettier `esbenp.prettier-vscode`
--   Dotenv `mikestead.dotenv`
+-   [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) `editorconfig.editorconfig`
+-   [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) `dbaeumer.vscode-eslint`
+-   [Prettier - Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) `esbenp.prettier-vscode`
+-   [DotENV](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv) `mikestead.dotenv`
 
 ## Organization
 
