@@ -151,6 +151,10 @@ The project gives some PowerShell scripts that can be used to execute common pro
 
 > Note: The serve command can be executed only if the serve tool is present in the environment of the application, otherwise the command will fail. The serve tool is used to host the application into a server. It can be used to host the application for staging or production environments.
 
-## Linters
+## Linters and Formatters
 
-TO DO
+The project has the JS and React linters already configured in `.eslintrc` file. The Prettier formatter is also configured with default parameters in `.prettierrc` file, to ensure the standardization between developers. To guarantee that the IDEs will use the same configuration, the project has the `.editorconfig` file with preset IDE configurations.
+
+For React Hooks, the plugins `plugin:react/recommended` and `plugin:react-hooks/recommended` are configured for ESLint. Typescript had to be set into ESLint also by using the `plugin:@typescript-eslint/recommended` plugin.
+
+> Note: Some of ESLint rules are set by default, as the requirement of JSDoc for functions, camelcase naming, explicit Typescript return type, and the optional React lib for JSX files. If you want to modify these configurations, please, be free to update the `.eslintrc` file following the [ESLint documentation](https://eslint.org/docs/latest/user-guide/configuring/).
