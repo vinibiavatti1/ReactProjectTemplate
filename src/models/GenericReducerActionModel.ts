@@ -2,8 +2,8 @@
  * Reducers action model.
  */
 type GenericReducerActionModel = {
-    type: string
-    payload?: object
+  type: string
+  payload?: object
 }
 
 export default GenericReducerActionModel

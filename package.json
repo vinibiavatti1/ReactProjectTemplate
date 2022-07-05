@@ -1,48 +1,59 @@
 {
-    "name": "react-project-template",
-    "version": "1.0.0",
-    "private": true,
-    "scripts": {
-        "start": "react-scripts start",
-        "build:staging": "env-cmd -f .env.staging react-scripts build",
-        "build:production": "env-cmd -f .env.production react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "serve": "serve -s build"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "dependencies": {
-        "@testing-library/jest-dom": "^5.16.4",
-        "@testing-library/react": "^13.3.0",
-        "@testing-library/user-event": "^13.5.0",
-        "@types/jest": "^27.5.2",
-        "@types/node": "^16.11.41",
-        "@types/react": "^18.0.12",
-        "@types/react-dom": "^18.0.5",
-        "env-cmd": "^10.1.0",
-        "i18next": "^21.8.10",
-        "i18next-http-backend": "^1.4.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-i18next": "^11.17.2",
-        "react-router-dom": "^6.3.0",
-        "react-scripts": "5.0.1",
-        "typescript": "^4.7.3",
-        "web-vitals": "^2.1.4"
-    },
-    "devDependencies": {
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-react-hooks": "^4.6.0"
-    }
+  "name": "react-project-template",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build:development": "env-cmd -f .env.development react-scripts build",
+    "build:staging": "env-cmd -f .env.staging react-scripts build",
+    "build:production": "env-cmd -f .env.production react-scripts build",
+    "test": "react-scripts test",
+    "serve": "serve -s build",
+    "eslint": "eslint --ext .tsx,.ts src/",
+    "eslint:fix": "eslint --fix --ext .tsx,.ts src/"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "i18next": "^21.8.10",
+    "i18next-http-backend": "^1.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^11.17.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.41",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.3"
+  }
 }

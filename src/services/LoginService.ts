@@ -4,9 +4,9 @@
  * @param password
  */
 async function login(user: string, password: string): Promise<boolean> {
-    return true
+  return true
 }
 
 export default {
-    login,
+  login,
 }

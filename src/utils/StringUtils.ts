@@ -4,9 +4,9 @@
  * @returns A formatted string.
  */
 function format(text: string): string {
-    return text
+  return text
 }
 
 export default {
-    format,
+  format,
 }
